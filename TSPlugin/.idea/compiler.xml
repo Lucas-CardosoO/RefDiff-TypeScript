@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="TSPlugin.TestCl.main" target="1.8" />
+      <module name="TSPlugin.TestCl.test" target="1.8" />
+      <module name="TSPlugin.TestClass.main" target="1.8" />
+      <module name="TSPlugin.TestClass.test" target="1.8" />
+      <module name="TSPlugin.TSPlugin.main" target="1.8" />
+      <module name="TSPlugin.TSPlugin.test" target="1.8" />
+      <module name="TSPlugin.TSPluginMain.main" target="1.8" />
+      <module name="TSPlugin.TSPluginMain.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
