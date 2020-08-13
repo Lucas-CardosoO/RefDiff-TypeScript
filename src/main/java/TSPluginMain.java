@@ -2,12 +2,10 @@ import refdiff.core.RefDiff;
 import refdiff.core.diff.CstDiff;
 import refdiff.core.diff.Relationship;
 import refdiff.parsers.js.JsPlugin;
-
 import java.io.File;
-
-
 public class TSPluginMain {
-    public static void main() throws Exception {
+    public static void main(String[] args) throws Exception {
+        System.out.println("Started Main");
         runExamples();
     }
 
