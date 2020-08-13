@@ -231,7 +231,7 @@ public class TsPlugin implements LanguagePlugin, Closeable {
 
     @Override
     public FilePathFilter getAllowedFilesFilter() {
-        return new FilePathFilter(Arrays.asList(".js", ".jsx"), Arrays.asList(".min.js"));
+        return new FilePathFilter(Arrays.asList(".ts", ".jsx"), Arrays.asList(".min.js"));
     }
 
     @Override
