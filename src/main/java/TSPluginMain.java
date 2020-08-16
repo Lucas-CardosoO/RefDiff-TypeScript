@@ -1,3 +1,4 @@
+import com.sun.org.apache.bcel.internal.generic.ExceptionThrower;
 import refdiff.core.RefDiff;
 import refdiff.core.diff.CstDiff;
 import refdiff.core.diff.Relationship;
@@ -21,12 +22,15 @@ public class TSPluginMain {
 
 			// Clone the angular.js GitHub repo.
 			File repo = refDiffJs.cloneGitRepository(
-				new File(tempFolder, "axios.git"),
-				"https://github.com/refdiff-study/axios.git");
-
-			CstDiff diffForCommit = refDiffJs.computeDiffForCommit(repo, "d23f9d5d4782e5849362895f8b648ed587999706");
-			printRefactorings("Refactorings found in axios d23f9d5d4782e5849362895f8b648ed587999706", diffForCommit);
+				new File(tempFolder, "ta.git"),
+				"https://github.com/pauloborba/teachingassistant.git");
+            refDiffJs.computeDiffForCommitHistory(repo, 15, (commit, diff) -> {
+                printRefactorings("Refactorings found in teachingAssistant  " + commit.getId().name(), diff);
+            });
+			//CstDiff diffForCommit = refDiffJs.computeDiffForCommit(repo, "b8340969981ac00067033fe514776a079a6df14b");
+			//printRefactorings("Refactorings found in axios 87bf57b52907db3eb2cd88d36f5dad9175000069", diffForCommit);
 		}
+		tempFolder.delete();
     }
 
     private static void printRefactorings(String headLine, CstDiff diff) {
