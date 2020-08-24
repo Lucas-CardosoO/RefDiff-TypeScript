@@ -52,7 +52,7 @@ public class TsPlugin implements LanguagePlugin, Closeable {
 
         this.nodeJs.getRuntime().add("babelParser", this.babel);
 
-        String plugins = "['jsx', 'typescript', 'objectRestSpread', 'exportDefaultFrom', 'exportNamespaceFrom', 'classProperties', 'dynamicImport', 'decorators', 'optionalCatchBinding']";
+        String plugins = "['jsx', 'typescript', 'objectRestSpread', 'exportDefaultFrom', 'exportNamespaceFrom', 'classProperties', 'dynamicImport', 'decorators-legacy', 'optionalCatchBinding']";
 
         this.nodeJs.getRuntime().executeVoidScript("function parse(script) {return babelParser.parse(script, {ranges: true, tokens: true, sourceType: 'unambiguous', allowImportExportEverywhere: true, allowReturnOutsideFunction: true, plugins: " + plugins + " });}");
         this.nodeJs.getRuntime().executeVoidScript("function toJson(object) {return JSON.stringify(object);}");
@@ -231,7 +231,7 @@ public class TsPlugin implements LanguagePlugin, Closeable {
 
     @Override
     public FilePathFilter getAllowedFilesFilter() {
-        return new FilePathFilter(Arrays.asList(".ts", ".jsx"), Arrays.asList(".min.js"));
+        return new FilePathFilter(Arrays.asList(".ts"), Arrays.asList(".min.js"));
     }
 
     @Override

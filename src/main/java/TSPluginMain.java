@@ -21,9 +21,9 @@ public class TSPluginMain {
 			RefDiff refDiffJs = new RefDiff(tsPlugin);
 
 			// Clone the angular.js GitHub repo.
-			File repo = refDiffJs.cloneGitRepository(
-				new File(tempFolder, "ta.git"),
-				"https://github.com/pauloborba/teachingassistant.git");
+            File repo = refDiffJs.cloneGitRepository(
+                    new File(tempFolder, "ta.git"),
+                    "https://github.com/pauloborba/teachingassistant.git");
             refDiffJs.computeDiffForCommitHistory(repo, 15, (commit, diff) -> {
                 printRefactorings("Refactorings found in teachingAssistant  " + commit.getId().name(), diff);
             });
